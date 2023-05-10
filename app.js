@@ -4,7 +4,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //routes
 const route = require("./routes/mainRoute");
-app.use(route);
+app.get("/api/v1/ppp", (req, res) => {
+  res.json({ wor: "working" });
+});
+app.use("/api/v1", route);
 app.get("/", (req, res) => {
   res.send("Hello Worlddddddddd!");
 });
