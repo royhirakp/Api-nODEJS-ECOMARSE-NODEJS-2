@@ -2,6 +2,14 @@ const express = require("express");
 const route = express.Router();
 
 let arr = [];
+route.get("/", (req, res) => {
+  res.status(200).json({
+    messege: "wellcome to E-Commerse webSite",
+    detailes:
+      "path : /products(get), /products(post), /products/:id(get), /products/:id(put), /products/:id(delete)",
+  });
+});
+
 route.get("/products", (req, res) => {
   res.status(200).json({
     data: arr,
